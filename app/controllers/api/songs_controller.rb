@@ -1,7 +1,7 @@
 class Api::SongsController < ApplicationController
 
     def index
-        @song = Song.all
+        @songs = Song.all
         render json: @songs
     end
 end
