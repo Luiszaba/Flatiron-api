@@ -15,7 +15,7 @@ class Api::SongsController < ApplicationController
     end
 
     def destroy
-        @song = Comment.find_by(params[:id])
+        @song = Song.find_by(params[:id])
         @song.destroy
     end
 
