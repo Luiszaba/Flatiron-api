@@ -3,18 +3,17 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 console.log(API_URL);
 
-
-const SongService = {
-    fetchSongs() {
-        return fetch(`${API_URL}/api/v1/songs`)
+const CommentService = {
+    fetchComments() {
+        return fetch(`${API_URL}/api/v1/comments`)
         .then(response => response.json())
     },
 
-    createSong(song) {
+    createComment(comment) {
         const fetchilizer = {
         method: 'POST',
         body: JSON.stringify({
-            song: song
+            comment: comment
         }),
         headers: {
         'Content-Type': 'application/json'
@@ -26,4 +25,4 @@ const SongService = {
 }
 
 
-export default SongService;
+export default CommentService;

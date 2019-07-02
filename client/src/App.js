@@ -4,6 +4,8 @@ import SongInput from './components/songs/SongInput'
 import SongService from './services/SongService';
 import Comments from './components/comments/Comments';
 import CommentInput from './components/comments/CommentInput';
+import CommentsContainer from './containers/CommentsContainer'
+import SongsContainer from './containers/SongsContainer'
 import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -37,31 +39,28 @@ class App extends Component {
     return(
       <div className="app">
       <h1>Albums App</h1>
-
       <div className="navbar">
         <h2>Navigation</h2>
         <Nav />
       </div>
-      
       <div className="sidebar">
         <h2>List of Songs</h2>
-        <Songs songs={this.state.songs} />
+        <SongsContainer />
       </div>
-
       <div className="createComment">
         <h2>Comments</h2>
         <CommentInput addComment={this.state.addComment} />
       </div>
-      
-      <div className="main-content">
-        <h2>Add Song</h2>
-        <SongInput addSong={this.addSong} />
-      </div>
-
       <div className="comments">
         <h2>Everyone's Suggestions</h2>
-        <Comments comments={this.state.comments} />
+        <CommentsContainer />
       </div>
+      <div className="main-content">
+        <h2>Add Song</h2>
+        <SongInput addSong={this.state.addSong} />
+      </div>
+
+      
       
     </div>
     )

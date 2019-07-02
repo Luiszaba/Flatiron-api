@@ -20,7 +20,9 @@ class CommentsContainer extends Component {
     }
 }
 
-const mapStateToProps = state => ({comments: state.props });
+const mapStateToProps = state => {
+    return { comments: state.comments }
+}
 
 const mapDispatchToProps = dispatch => ({
     addComment: name => dispatch({type: "ADD_COMMENT", name }),
