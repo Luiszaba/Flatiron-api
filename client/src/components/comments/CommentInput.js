@@ -8,38 +8,45 @@ class CommentInput extends Component {
     
 
     handleOnChange = event => {
+        const { name, value } = event.target
         this.setState({
-            text: event.target.value
+            [name]: value
         });
     };
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.dispatch({ type: 'ADD_COMMENT', payload: this.state });
+        this.props.addComment(this.state)
+        this.setState({
+            comment: ''
+        })
     };
 
-
     render() {
+        console.log(this.state)
         return(
             <div className="form">
-                <form onSubmit={event => this.handleOnSubmit(event)} >
-
+                <form onSubmit={this.handleOnSubmit} >
                     <p>
                     <label> Add Comment </label>
                         <input
-                            type="text"
-                            name="comment"
-                            value={this.state.text}
-                            onChange={event => this.handleOnChange(event)}
+                        type="text"
+                        name="comment"
+                        value={this.state.text}
+                        onChange={this.handleOnChange}
                         />
                     </p>
-                    <button>Add Comment</button>
-
+                    <input type="submit"/>
                 </form>
             </div>
         );
     }
 };
 
+const mapDispatchToProps = dispatch => {
+    return {
+        addComment: formData => dispatch({type: 'ADD_COMMENT', payload: formData})
+    };
+};
 
-export default connect()(CommentInput)
+export default connect(null, mapDispatchToProps)(CommentInput)

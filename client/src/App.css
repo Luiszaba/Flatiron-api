@@ -33,19 +33,19 @@
 }
 
 div.navbar {
-  background-color: rgb(206, 231, 212);
+  background-color: rgb(241, 208, 21);
+  text-decoration-color: antiquewhite;
   margin: 10px;
   -moz-background-inline-policy: bounding-box;
   display: flex;
   text-align: justify;
 }
 
-div.sidebar {
+div.songsContainer {
   background-color: rgb(33, 223, 223);
   text-align: center;
-  width: 28vw;
-  height: 90vh;
-  float: left
+  width: 70v;
+  height: 30vh;
 }
 
 div.main-content {
@@ -57,7 +57,7 @@ div.main-content {
 }
 
 div.createComment {
-  background-color: tomato;
+  background-color: rgb(49, 126, 228);
   text-align: center;
   height: 12vh;
 }

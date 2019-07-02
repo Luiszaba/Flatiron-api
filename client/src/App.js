@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Songs from './components/songs/Songs';
 import SongInput from './components/songs/SongInput'
-import SongService from './services/SongService';
 import Comments from './components/comments/Comments';
 import CommentInput from './components/comments/CommentInput';
+import NavBar from './components/NavBar';
 import CommentsContainer from './containers/CommentsContainer'
 import SongsContainer from './containers/SongsContainer'
-import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -21,70 +20,40 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    SongService.fetchSongs()
-    .then(songs => 
-      this.setState({songs}))
-  }
-
-  addSong = song => { 
-    SongService.createSong(song)
-    .then(song => 
-      this.setState({ 
-        songs: this.state.songs.concat(song)[0] 
-    }))
-  }
-
   render() {
     return(
       <div className="app">
-      <h1>Albums App</h1>
-      <div className="navbar">
-        <h2>Navigation</h2>
-        <Nav />
+        <h1>Albums App</h1>
+          <div className="AppPage">
+            
+            <div className="navbar"><Nav/></div>
+            <div className="createComment"><CommentsContainer /></div>
+            <div className="songsContainer"><SongsContainer /></div>
+          </div>
       </div>
-      <div className="sidebar">
-        <h2>List of Songs</h2>
-        <SongsContainer />
-      </div>
-      <div className="createComment">
-        <h2>Comments</h2>
-        <CommentInput addComment={this.state.addComment} />
-      </div>
-      <div className="comments">
-        <h2>Everyone's Suggestions</h2>
-        <CommentsContainer />
-      </div>
-      <div className="main-content">
-        <h2>Add Song</h2>
-        <SongInput addSong={this.state.addSong} />
-      </div>
-
-      
-      
-    </div>
     )
   }
-} 
+}
 
-  const mapStateToProps = state => {
-    return { songs: state.songs,
-             comments: state.comment }
-  }
-  
-const Nav = (props) => {
+
+const Nav = () => {
   return(
     <Router>
-      <div className="app">
+      <div className="navbar">
         <NavBar />
         <Route exact path="/comments" component={Comments} />
         <Route exact path="/comment_input" component={CommentInput} />
         <Route exact path="/song_input" component={SongInput} />
         <Route exact path="/songs" component={Songs} />
-       
       </div>
     </Router>
   )
 }
+
+const mapStateToProps = state => {
+    return { songs: state.songs,
+             comments: state.comment }
+}
+  
 
 export default connect(mapStateToProps)(App);

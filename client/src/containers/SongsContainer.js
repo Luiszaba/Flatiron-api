@@ -20,10 +20,7 @@ class SongsContainer extends Component {
     }
 }
 
-
-const mapStateToProps = state => {
-    return { songs: state.songs }
-}
+const mapStateToProps = ({songs}) => ({songs})
 
 const mapDispatchToProps = dispatch => ({
     addSong: name => dispatch({type: "ADD_SONG", name }),

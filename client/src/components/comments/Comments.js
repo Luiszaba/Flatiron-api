@@ -17,9 +17,9 @@ class Comments extends Component {
         )
         return(
             <div>
-                <ul>
+                <li>
                     {listComments}
-                </ul>
+                </li>
             </div>
         )
     }

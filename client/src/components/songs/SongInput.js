@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from 'react-bootstrap/Button';
 
 
 class SongInput extends Component {
@@ -13,11 +12,11 @@ class SongInput extends Component {
             legnth: ''
         };
     }
-    
 
     handleOnChange = event => {
+        const {name, value } = event.target
         this.setState({
-            [event.target.name]: event.target.value
+            [name]: value
         });
     };
 
@@ -33,9 +32,10 @@ class SongInput extends Component {
     };
 
     render() {
+        console.log(this.state)
         return(
             <div className="form">
-                <form onSubmit={event => this.handleOnSubmit(event)} >
+                <form onSubmit={this.handleOnSubmit} >
                     
                     <p>
                     <label htmlFor="song_title">Title:</label>
@@ -77,7 +77,7 @@ class SongInput extends Component {
                     />
                     </p>
 
-                    <Button>Add Song</Button>
+                    <input type="submit" value="Add Song" />
                 </form>
             </div>
         );
