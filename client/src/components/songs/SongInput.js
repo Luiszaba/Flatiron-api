@@ -4,8 +4,8 @@ import Button from 'react-bootstrap/Button';
 
 
 class SongInput extends Component {
-    constructor(){
-    super()
+    constructor(props){
+    super(props)
         this.state = {
             title: '',
             artist: '',

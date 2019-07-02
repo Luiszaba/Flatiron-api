@@ -1,4 +1,5 @@
-class Api::SongsController < ApplicationController
+module Api::V1
+    class SongsController < ApplicationController
 
     def index
         @songs = Song.all
@@ -24,4 +25,5 @@ class Api::SongsController < ApplicationController
     def song_params
         params.require(:song).permit(:id, :title, :genre, :artist, :length)
     end
+end
 end

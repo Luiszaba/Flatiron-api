@@ -25,7 +25,7 @@ function songsReducer( state = [], action) {
     }
 }
 
-function commentsReducer(state =[], action ){
+function commentsReducer( state =[], action ){
     let idx;
 
     switch(action.type) {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Songs from './components/songs/Songs';
 import SongInput from './components/songs/SongInput'
 import SongService from './services/SongService';
-
+import Comments from './components/comments/Comments';
+import CommentInput from './components/comments/CommentInput';
 import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -47,14 +48,20 @@ class App extends Component {
         <Songs songs={this.state.songs} />
       </div>
 
-      
+      <div className="createComment">
+        <h2>Comments</h2>
+        <CommentInput addComment={this.state.addComment} />
+      </div>
       
       <div className="main-content">
         <h2>Add Song</h2>
-        <SongInput addSong={this.state.addSong} />
+        <SongInput addSong={this.addSong} />
       </div>
 
-      
+      <div className="comments">
+        <h2>Everyone's Suggestions</h2>
+        <Comments comments={this.state.comments} />
+      </div>
       
     </div>
     )
@@ -71,7 +78,8 @@ const Nav = (props) => {
     <Router>
       <div className="app">
         <NavBar />
-        
+        <Route exact path="/comments" component={Comments} />
+        <Route exact path="/comment_input" component={CommentInput} />
         <Route exact path="/song_input" component={SongInput} />
         <Route exact path="/songs" component={Songs} />
        

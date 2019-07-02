@@ -5,7 +5,7 @@ class Comments extends Component {
     
     render() {
         const { comments, deleteComment } = this.props;
-        const listComments = comments.filter(comment => {
+        const listComments = comments.map(comment => {
             return(
                 <Comment
                     key={comment.id} 
