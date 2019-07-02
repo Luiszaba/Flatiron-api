@@ -24,8 +24,13 @@ Song.create(title: "Coconut-Orange Patties", artist: "Anastasaia", genre: "Tropi
 Song.create(title: "Coconut with extra coconut Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
 Song.create(title: "Coconut-Apple Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
 Song.create(title: "Coconut-Cinnamon Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
-Song.create(title: "Coconut-Banana Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")Song.create(title: "Coconut Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
+Song.create(title: "Coconut-Banana Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
+Song.create(title: "Coconut Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
 Song.create(title: "Coconut-Pineapple Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
 Song.create(title: "Taoyaki Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
 Song.create(title: "Mystery Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
 Song.create(title: "Rotten Patties", artist: "Anastasaia", genre: "Tropical", legnth: "2:00")
+
+
+Comment.create(comment: "Hello World")
+Comment.create(comment: "This page is using react and redux")
