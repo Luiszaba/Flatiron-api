@@ -1,5 +1,6 @@
 module Api::V1
-class CommentsController < ApplicationController
+    class CommentsController < ApplicationController
+
 
     def index 
         @comments = Comment.all
@@ -22,6 +23,10 @@ class CommentsController < ApplicationController
     
 
     private 
+
+    def comment_list
+        @comment = Comment.find(params[:id])
+    end
 
     def comment_params
         params.require(:comment).permit(:id, :comment)

@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import SongsContainer from '../../containers/SongsContainer';
+
 
 class Song extends Component {
-
-  handleOnClick() {
-    this.props.deleteSong(this.props.song.id)
-  }
 
   render() {
     const { song } = this.props;
 
     return (
-
-      <div>
-        <li>
-          {song.title}
-          <button onClick={() => this.handleOnClick()}> Delete </button>
-          <SongsContainer song={song}/>
-        </li>
-      </div>
+      
+       
+          <ul>
+          <li>Song Title: {song.title} </li>
+          <li>Song Artist: {song.artist} </li>
+          <li>Song Genre: {song.genre} </li>
+          <li>Song Length: {song.legnth} </li>
+          <br></br>
+          </ul>
+          
+          
+        
+      
       
     );
   }

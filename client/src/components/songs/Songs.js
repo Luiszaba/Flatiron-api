@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import Song from './Song';
 
-class Songs extends Component{
+class Songs extends Component {
+
     render() {
-        const { songs, deleteSong } = this.props
-        const songList = songs.map(song => {    
+        const { songs } = this.props
+        const songList = songs.songs.map(song=> { 
         return(
-            <Song 
-                key={song.id}
+            <ol key={song.id}>
+                <Song 
                 song={song}
-                deleteSong={deleteSong}
-            />
+                />
+            </ol>
             )
         })
 
     return (
-        <li>
-        {songList}
-        </li>
+        <div className="SongList">
+                {songList}
+        </div>
         )
-}}
+    }  
+}
 
 export default Songs;

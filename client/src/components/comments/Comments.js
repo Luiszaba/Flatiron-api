@@ -2,27 +2,27 @@ import React, { Component } from 'react';
 import Comment from './Comment';
 
 class Comments extends Component {
-    
     render() {
-        const { comments, deleteComment } = this.props;
-        const listComments = comments.map(comment => {
+        const { comments } = this.props;
+        const listComments = comments.comments.map(comment => {
             return(
-                <Comment
-                    key={comment.id} 
+                <ol key={comment.id}>
+                    <Comment
                     comment={comment} 
-                    deleteComment={deleteComment} 
-                 />
+                    />
+                </ol>
                 ) 
             }
         )
+
         return(
-            <div>
-                <li>
+            <div className="CommentList">
                     {listComments}
-                </li>
             </div>
         )
     }
 }
 
 export default Comments;
+
+

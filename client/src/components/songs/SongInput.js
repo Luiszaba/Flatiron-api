@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import {createSong} from '../../actions/SongActions'
 
 class SongInput extends Component {
     constructor(props){
@@ -22,7 +22,7 @@ class SongInput extends Component {
 
     handleOnSubmit = event  => {
         event.preventDefault();
-        this.props.addSong(this.state.name)
+        this.props.createSong(this.state)
         this.setState({
             title: '',
             artist: '',
@@ -32,7 +32,7 @@ class SongInput extends Component {
     };
 
     render() {
-        console.log(this.state)
+        
         return(
             <div className="form">
                 <form onSubmit={this.handleOnSubmit} >
@@ -85,12 +85,7 @@ class SongInput extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addSong: formData => dispatch({type: 'ADD_SONG', payload: formData})
-    };
-};
 
-export default connect(null, mapDispatchToProps)(SongInput);
+export default connect(null, {createSong} )(SongInput);
 
 

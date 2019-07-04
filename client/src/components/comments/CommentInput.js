@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {createComment} from '../../actions/CommentActions'
 
 class CommentInput extends Component {
-    state = {
+    constructor(props) {
+    super(props)
+        this.state = {
         comment: ''
+        };
     };
-    
 
     handleOnChange = event => {
         const { name, value } = event.target
@@ -23,30 +26,25 @@ class CommentInput extends Component {
     };
 
     render() {
-        console.log(this.state)
+    
         return(
             <div className="form">
                 <form onSubmit={this.handleOnSubmit} >
                     <p>
-                    <label> Add Comment </label>
+                    <label htmlFor="comment"> Add Comment: </label>
                         <input
                         type="text"
                         name="comment"
-                        value={this.state.text}
+                        value={this.state.comment}
                         onChange={this.handleOnChange}
                         />
                     </p>
-                    <input type="submit"/>
+                    <input type="submit" value="add comment"/>
                 </form>
             </div>
         );
     }
-};
+}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addComment: formData => dispatch({type: 'ADD_COMMENT', payload: formData})
-    };
-};
 
-export default connect(null, mapDispatchToProps)(CommentInput)
+export default connect(null, {createComment} )(CommentInput)

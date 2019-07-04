@@ -7,6 +7,8 @@ module Api::V1
     end
 
     def create
+        byebug
+
         @song = Song.new(song_params)
         if @song.save
             render json: @song
@@ -16,14 +18,17 @@ module Api::V1
     end
 
     def destroy
-        @song = Song.find_by(params[:id])
         @song.destroy
     end
 
-    private 
+    private
+
+    def song_list
+        @song = Song.find_by_id(params[:id])
+      end
 
     def song_params
-        params.require(:song).permit(:id, :title, :genre, :artist, :length)
+        params.require(:song).permit(:id, :title, :genre, :artist, :legnth)
     end
 end
 end
