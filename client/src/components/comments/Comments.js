@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Comment from './Comment';
 
 class Comments extends Component {
+
     render() {
         const { comments } = this.props;
         const listComments = comments.comments.map(comment => {
+            console.log(comment.id)
             return(
                 <ol key={comment.id}>
                     <Comment
@@ -12,8 +14,7 @@ class Comments extends Component {
                     />
                 </ol>
                 ) 
-            }
-        )
+            })
 
         return(
             <div className="CommentList">
@@ -24,5 +25,3 @@ class Comments extends Component {
 }
 
 export default Comments;
-
-

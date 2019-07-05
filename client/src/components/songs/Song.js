@@ -7,8 +7,6 @@ class Song extends Component {
     const { song } = this.props;
 
     return (
-      
-       
           <ul>
           <li>Song Title: {song.title} </li>
           <li>Song Artist: {song.artist} </li>
@@ -16,11 +14,6 @@ class Song extends Component {
           <li>Song Length: {song.legnth} </li>
           <br></br>
           </ul>
-          
-          
-        
-      
-      
     );
   }
 };

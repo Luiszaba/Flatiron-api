@@ -9,6 +9,7 @@ class Comment extends Component {
 
                 <ul>
                     <li>{comment.comment}</li>
+                    <br></br>
                 </ul>
         );
     }

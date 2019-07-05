@@ -39,7 +39,7 @@ class CommentInput extends Component {
                         onChange={this.handleOnChange}
                         />
                     </p>
-                    <input type="submit" value="add comment"/>
+                    <input type="submit" value="Add Comment"/>
                 </form>
             </div>
         );
