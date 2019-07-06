@@ -3,7 +3,7 @@ module Api::V1
 
 
     def index 
-        @comments = Comment.all
+        @comments = Comment.all.order('created_at DESC')
         render json: @comments
     end
 
@@ -25,7 +25,7 @@ module Api::V1
     private 
 
     def comment_list
-        @comment = Comment.find(params[:id])
+        @comment = Comment.find_by_id(params[:id])
     end
 
     def comment_params

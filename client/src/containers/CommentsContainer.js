@@ -10,34 +10,20 @@ class CommentsContainer extends Component {
         this.props.fetchComments()
     }
 
-    
-
     render() {
-        
         return(
-            <div>
-                <div className="CommentInput">
-                <CommentInput 
-                    addComment={this.props.addComment}
-                />
+                <div>
+                    <CommentInput addComment={this.props.addComment}/>                
+                    <Comments comments={this.props.comments} />
                 </div>
-                <div className="Comments">
-                <Comments 
-                    comments={this.props.comments} 
-                />
-                </div>
-            </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    
-    return { comments: state.comments} 
-}
+const mapStateToProps = state => { return { comments: state.comments} }
 
 const mapDispatchToProps = dispatch => ({
-    addComment: name => dispatch({type: "ADD_COMMENT", name }),
+    addComment: comment => dispatch({type: "ADD_COMMENT", comment }),
     fetchComments: () => { dispatch(fetchComments()) }
 });
 

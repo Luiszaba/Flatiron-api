@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2019_07_01_144655) do
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
-    t.integer "song_id"
-    t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -27,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_07_01_144655) do
     t.string "title"
     t.string "artist"
     t.string "genre"
-    t.time "legnth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

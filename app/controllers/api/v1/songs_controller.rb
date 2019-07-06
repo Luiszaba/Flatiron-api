@@ -1,14 +1,14 @@
+
+
 module Api::V1
     class SongsController < ApplicationController
 
     def index
-        @songs = Song.all
+        @songs = Song.all.order('created_at DESC')
         render json: @songs
     end
 
     def create
-        byebug
-
         @song = Song.new(song_params)
         if @song.save
             render json: @song

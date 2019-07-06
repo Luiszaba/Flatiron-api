@@ -8,8 +8,10 @@ class Comment extends Component {
         return(
 
                 <ul>
-                    <li>{comment.comment}</li>
-                    <br></br>
+                <li>
+                "{comment.comment}"
+                </li>
+                <br></br>
                 </ul>
         );
     }

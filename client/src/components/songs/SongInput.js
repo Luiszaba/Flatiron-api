@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {createSong} from '../../actions/SongActions'
+import { default as UUID } from "node-uuid"
 
 class SongInput extends Component {
     constructor(props){
@@ -8,10 +9,10 @@ class SongInput extends Component {
         this.state = {
             title: '',
             artist: '',
-            genre: '',
-            legnth: ''
+            genre: ''
+            
         };
-    }
+    };
 
     handleOnChange = event => {
         const {name, value } = event.target
@@ -26,17 +27,21 @@ class SongInput extends Component {
         this.setState({
             title: '',
             artist: '',
-            genre: '',
-            legnth: ''
+            genre: ''
+            
         })
     };
+
+    componentWillMount() {
+        this.id = UUID.v4();
+    }
 
     render() {
         
         return(
             <div className="form">
                 <form onSubmit={this.handleOnSubmit} >
-                    
+                    <div id={this.id}>
                     <p>
                     <label htmlFor="song_title">Title:</label>
                     <input 
@@ -66,17 +71,7 @@ class SongInput extends Component {
                     onChange={this.handleOnChange}
                     />
                     </p>
-
-                    <p>
-                    <label htmlFor="song_length">Song Legnth:</label>
-                    <input 
-                    type="text"
-                    name="legnth" 
-                    value={this.state.legnth}
-                    onChange={this.handleOnChange}
-                    />
-                    </p>
-
+                    </div>
                     <input type="submit" value="Add Song" />
                 </form>
             </div>

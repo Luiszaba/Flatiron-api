@@ -5,18 +5,19 @@ class Songs extends Component {
 
     render() {
         const { songs } = this.props
-        const songList = songs.songs.map(song=> { 
+        const songList = songs.songs.map(song => { 
             
         return(
-            <ol key={song.id}>
-                <Song 
-                song={song}
-                />
-            </ol>
+            
+            <Song
+            key={this.id}
+            song={song}
+            />
+            
             )
         })
 
-    return (
+    return(
         <div className="SongList">
                 {songList}
         </div>

@@ -8,10 +8,9 @@ class Song extends Component {
 
     return (
           <ul>
-          <li>Song Title: {song.title} </li>
-          <li>Song Artist: {song.artist} </li>
-          <li>Song Genre: {song.genre} </li>
-          <li>Song Length: {song.legnth} </li>
+          <li>Title: {song.title} </li>
+          <li>Artist: {song.artist} </li>
+          <li>Genre: {song.genre} </li>
           <br></br>
           </ul>
     );

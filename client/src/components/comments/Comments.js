@@ -6,19 +6,21 @@ class Comments extends Component {
     render() {
         const { comments } = this.props;
         const listComments = comments.comments.map(comment => {
-            console.log(comment.id)
-            return(
-                <ol key={comment.id}>
-                    <Comment
-                    comment={comment} 
-                    />
-                </ol>
-                ) 
-            })
+            
+            return( 
+            
+            <Comment
+            key={this.id}  
+            comment={comment} 
+            />
+        
+            )
+            }
+            )
 
         return(
             <div className="CommentList">
-                    {listComments}
+                {listComments}
             </div>
         )
     }

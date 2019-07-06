@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {createComment} from '../../actions/CommentActions'
+import { default as UUID } from "node-uuid"
+
 
 class CommentInput extends Component {
     constructor(props) {
@@ -19,20 +21,26 @@ class CommentInput extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.addComment(this.state)
+        this.props.createComment(this.state)
         this.setState({
             comment: ''
         })
     };
+
+    componentWillMount() {
+        this.id = UUID.v4();
+    }
 
     render() {
     
         return(
             <div className="form">
                 <form onSubmit={this.handleOnSubmit} >
+                    
                     <p>
                     <label htmlFor="comment"> Add Comment: </label>
-                        <input
+                        <textarea
+                        id={this.id}
                         type="text"
                         name="comment"
                         value={this.state.comment}
