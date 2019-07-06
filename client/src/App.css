@@ -34,12 +34,11 @@
 
 div.navbar {
   background-color: rgb(241, 208, 21);
-  text-decoration-color: antiquewhite;
+  text-decoration-color: #3a71e7;
   margin: 10px;
-  -moz-background-inline-policy: bounding-box;
   display: flex;
-  text-align: justify;
-  height: 20;
+  text-align: center;
+  height: 15;
 }
 
 div.create_Comment {
@@ -56,4 +55,8 @@ div.songs_Container {
   margin: 10px;
   float: left; 
   width: 45vw;
+}
+
+div.todays_topic {
+  text-align: center
 }

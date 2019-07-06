@@ -1,8 +1,11 @@
 import React from 'react';
 
-class Home extends React.Component {
-    return 
-  "Write in what you are listening to and join the conversation"
-}
 
-export default Home;
+export default class Home extends React.Component {
+    render() {
+        return(
+            <div className="todays_topic">
+                <p>"Todays topic is METAL!!!"</p>
+            </div>
+        )}
+        }

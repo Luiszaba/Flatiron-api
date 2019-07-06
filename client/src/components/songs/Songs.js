@@ -5,17 +5,15 @@ class Songs extends Component {
 
     render() {
         const { songs } = this.props
-        const songList = songs.songs.map(song => { 
+        const songList = songs.songs.map((song) =>
             
-        return(
-            
-            <Song
-            key={this.id}
+            <ul key={song.id}>
+            <Song 
             song={song}
             />
+            </ul>
             
-            )
-        })
+        )
 
     return(
         <div className="SongList">

@@ -3,14 +3,9 @@ import React, { Component } from 'react';
 class Comment extends Component {
 
     render() {
-        const { comment } = this.props
-
         return(
-
-                <ul>
-                <li>
-                "{comment.comment}"
-                </li>
+                <ul>               
+                "{this.props.comment.comment}"
                 <br></br>
                 </ul>
         );

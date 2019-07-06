@@ -14,7 +14,7 @@ class App extends Component {
     super()
     this.state = {
       songs: [],
-      comment: []
+      comments: []
     }
   }
 
@@ -39,7 +39,7 @@ const Nav = () => {
     <Router>
       <div className="navbar">
         <NavBar />
-        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/songs" component={CommentsContainer} />
         <Route exact path="/comment_input" component={CommentInput} />
         <Route exact path="/song_input" component={SongInput} />

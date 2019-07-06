@@ -40,7 +40,7 @@ class CommentInput extends Component {
                     <p>
                     <label htmlFor="comment"> Add Comment: </label>
                         <textarea
-                        id={this.id}
+                        id={Math.random()*10000000}
                         type="text"
                         name="comment"
                         value={this.state.comment}
