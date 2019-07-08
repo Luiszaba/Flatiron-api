@@ -5,22 +5,22 @@ class Comments extends Component {
 
     render() {
         const { comments } = this.props;
-        const listComments = comments.comments.map((comment) => 
+        const listComments = comments.comments.map(comment => 
             
-            <ol key={comment.id}>
+            <React.Fragment key={comment.id}>
             <Comment
             comment={comment} 
             />
-            </ol>
-            )
+            </React.Fragment>
+            );
             
 
         return(
             <div className="CommentList">
                 {listComments}
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Comments;

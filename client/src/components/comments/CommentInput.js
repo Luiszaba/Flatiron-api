@@ -24,7 +24,7 @@ class CommentInput extends Component {
         this.props.createComment(this.state)
         this.setState({
             comment: ''
-        })
+        });
     };
 
     componentWillMount() {
@@ -40,7 +40,7 @@ class CommentInput extends Component {
                     <p>
                     <label htmlFor="comment"> Add Comment: </label>
                         <textarea
-                        id={Math.random()*10000000}
+                        id={this.id}
                         type="text"
                         name="comment"
                         value={this.state.comment}
@@ -51,8 +51,8 @@ class CommentInput extends Component {
                 </form>
             </div>
         );
-    }
-}
+    };
+};
 
 
 export default connect(null, {createComment} )(CommentInput)

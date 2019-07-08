@@ -4,10 +4,13 @@ class Comment extends Component {
 
     render() {
         return(
-                <ul>               
+            <div className="organizedCommentList">
+                <ul > 
+                                  
                 "{this.props.comment.comment}"
                 <br></br>
                 </ul>
+            </div>
         );
     }
 };

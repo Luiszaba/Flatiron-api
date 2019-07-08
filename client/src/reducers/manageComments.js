@@ -10,7 +10,7 @@ export default function commentsReducer( state = { loading: false,
         return { loading: false, comments: [ ...action.payload ] };
     
     case "ADD_COMMENT":
-        return { ...state, comments: [ ...state.comments, action.comment ] };
+        return { ...state, comments: [ ...state.comments, action.payload ] };
 
     default: 
         return state;

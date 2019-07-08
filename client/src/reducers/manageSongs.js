@@ -10,7 +10,7 @@ export default function songsReducer( state = { loading: false,
         return { loading: false, songs: [...action.payload ] };
     
     case "ADD_SONG":
-        return { ...state, songs: [ ...state.songs, action.song ] };
+        return { ...state, songs: [ ...state.songs, action.payload ] };
 
     default:
         return state;
