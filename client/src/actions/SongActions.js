@@ -1,4 +1,5 @@
 export const fetchSongs = () => {
+  console.log("c")
     return (dispatch) => {
       dispatch({ type: 'LOADING_SONGS' });
       return fetch('http://localhost:3000/api/v1/songs')
@@ -8,6 +9,7 @@ export const fetchSongs = () => {
             type: 'FETCH_SONGS',
             payload: responseJSON
           })
+          console.log('e')
         });
     };
   }

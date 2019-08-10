@@ -8,17 +8,13 @@ class Comments extends Component {
         const listComments = comments.comments.map(comment => 
             
             <React.Fragment key={comment.id}>
-            <Comment
-            comment={comment} 
-            />
-            </React.Fragment>
+            <Comment comment={comment}/>
+            </React.Fragment>   
             );
             
 
         return(
-            <div className="CommentList">
-                {listComments}
-            </div>
+            <div className="CommentList"> {listComments} </div>
         );
     };
 };

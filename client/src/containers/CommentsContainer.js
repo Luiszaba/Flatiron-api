@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CommentInput from '../components/comments/CommentInput';
 import Comments from '../components/comments/Comments';
 import { fetchComments } from '../actions/CommentActions'
-import  {createComment} from '../actions/CommentActions'
+import { createComment } from '../actions/CommentActions'
 import { connect } from 'react-redux';
 
 class CommentsContainer extends Component {

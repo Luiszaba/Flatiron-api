@@ -32,6 +32,7 @@ class SongInput extends Component {
         })
     };
 
+    /* following method is depricated.  Should be replaced with fetch */
     componentWillMount() {
         this.id = UUID.v4();
     }

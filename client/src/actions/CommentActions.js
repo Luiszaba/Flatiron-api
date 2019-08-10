@@ -7,16 +7,16 @@ export const fetchComments = () => {
           dispatch({
             type: 'FETCH_COMMENTS',
             payload: responseJSON
-          })
+          });
        });
     };
-  }
+  };
 
 export const loadingComments = () => {
     return {
         type: 'LOADING_COMMENTS'
-    }
-}
+    };
+};
 
 export const createComment = (comment) => {
   return (dispatch) => {
@@ -33,6 +33,6 @@ export const createComment = (comment) => {
       dispatch({
           type: 'ADD_COMMENT',
           payload: responseJSON
-      })
-  })
-}}
+      });
+  });
+}};

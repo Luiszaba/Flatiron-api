@@ -46,7 +46,7 @@ div.create_Comment {
   text-align: center;
   float: right;
   margin: 10px;
-  width: 45vw;
+  width: 65vw;
 }
 
 div.songs_Container {
@@ -54,9 +54,11 @@ div.songs_Container {
   text-align: center;
   margin: 10px;
   float: left; 
-  width: 45vw;
+  width: 30vw;
 }
 
 div.todays_topic {
-  text-align: center
+  text-align: center;
+  text-decoration-color: coral;
+  -webkit-text-fill-color: teal;
 }

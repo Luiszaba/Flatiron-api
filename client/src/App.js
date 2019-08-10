@@ -3,6 +3,7 @@ import SongInput from './components/songs/SongInput'
 import SongsContainer from './containers/SongsContainer';
 import CommentsContainer from './containers/CommentsContainer';
 import CommentInput from './components/comments/CommentInput';
+import About from './About'
 import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -43,12 +44,13 @@ const Nav = () => {
         <Route exact path="/songs" component={CommentsContainer} />
         <Route exact path="/comment_input" component={CommentInput} />
         <Route exact path="/song_input" component={SongInput} />
+        <Route exact path="/about" component={About} />
       </div>
     </Router>
   )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return { songs: state.songs,
              comments: state.comments }
 }

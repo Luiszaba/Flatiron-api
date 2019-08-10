@@ -22,11 +22,13 @@ class CommentInput extends Component {
     handleOnSubmit = event => {
         event.preventDefault()
         this.props.createComment(this.state)
+        
         this.setState({
             comment: ''
         });
     };
 
+    /* the following method is depricated */
     componentWillMount() {
         this.id = UUID.v4();
     }

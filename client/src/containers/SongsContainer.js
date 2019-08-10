@@ -7,7 +7,10 @@ import { connect } from 'react-redux';
 class SongsContainer extends Component {
 
     componentDidMount() {
+        console.log("a")
+        
         this.props.fetchSongs()
+        console.log("b")
     }
     
 
@@ -36,4 +39,3 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongsContainer)
-
